@@ -1,0 +1,8 @@
+<mat-card>
+  <p>{{ productData.title }}</p>
+  <p>{{ productData.price }}</p>
+  <img src="{{ productData.image }}" alt="" />
+  <button (click)="remuveProduct()" mat-raised-button color="warn">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>
