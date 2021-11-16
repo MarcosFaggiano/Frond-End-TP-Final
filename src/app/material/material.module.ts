@@ -13,6 +13,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 let materialModules = [
   MatButtonModule,
@@ -27,6 +28,7 @@ let materialModules = [
   MatToolbarModule,
   MatTableModule,
   MatBadgeModule,
+  MatDatepickerModule,
 ];
 
 @NgModule({

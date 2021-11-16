@@ -1,1 +1,75 @@
-<p>contact works!</p>
+<mat-card class="form__container">
+  <h1>Contactanos!</h1>
+  <p>Valido: {{ formData.valid ? "Si" : "No" }}</p>
+  <form [formGroup]="formData" (ngSubmit)="submitForm()" class="form">
+    <!-- ----------------------------------------------------------------------------- -->
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" placeholder="Nombre" type="text" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input
+        matInput
+        formControlName="apellido"
+        name="apellido"
+        plaseholder="apellido"
+        type="text"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Edad</mat-label>
+      <input
+        matInput
+        formControlName="age"
+        name="age"
+        min="0"
+        max="99"
+        type="number"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <div class="error" *ngIf="userEmail()?.invalid && userEmail()?.touched">
+        <br />
+        <small *ngIf="userEmail()?.getError('required')" class="redText"
+          >El Email es obligatorio
+        </small>
+        <br />
+        <small *ngIf="userEmail()?.getError('minlength')" class="redText"
+          >El minimo de caracteres es 10
+        </small>
+        <br />
+        <small *ngIf="userEmail()?.getError('email')" class="redText"
+          >El formato es incorrecto
+        </small>
+      </div>
+      <mat-label for="email">Email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        name="email"
+        id="email"
+        plaseholder="Email"
+        type="text"
+      />
+    </mat-form-field>
+
+    <div class="form__checkbox">
+      <label for="mailingList">Suscribirse al mail List!!</label>
+      <mat-checkbox
+        formControlName="mailingList"
+        type="checkbox"
+      ></mat-checkbox>
+    </div>
+    <!-- ---------------------------------------------------------------------------------- -->
+
+    <!-- ------------------------------------------------------------ -->
+
+    <div class="form__buttons">
+      <button mat-raised-button color="primary" type="submit">Enviar</button>
+    </div>
+  </form>
+</mat-card>
