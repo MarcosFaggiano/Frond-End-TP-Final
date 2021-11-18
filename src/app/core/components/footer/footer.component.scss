@@ -1,0 +1,43 @@
+// cuando ponemos display de flex, pones los iconos uno al lado del otro
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff87f;
+  padding: 30px 0;
+  gap: 15px;
+
+  body.dark & {
+    background: rgb(38, 37, 37);
+    box-shadow: rgb(46, 45, 45);
+    img {
+      background-color: snow;
+    }
+    &__title {
+      color: snow;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s linear;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  &__link {
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

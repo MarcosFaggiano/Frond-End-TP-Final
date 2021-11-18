@@ -20,11 +20,18 @@ export class ContactComponent implements OnInit {
       [Validators.required, Validators.minLength(10), Validators.email],
     ],
     age: [0, [Validators.max(99), Validators.min(0)]],
+    dateOfBirth: ['', Validators.required],
+    optionMasc: [true],
+    optionFem: [true],
     mailingList: [true],
   });
 
   userName() {
     return this.formData.get('name');
+  }
+
+  userDateOfBirth() {
+    return this.formData.get('dateOfBirth');
   }
 
   userApellido() {
@@ -50,5 +57,9 @@ export class ContactComponent implements OnInit {
   submitForm() {
     if (this.formData.valid) console.log(this.formData);
     // else alert('Faltan datos de completar!');
+  }
+
+  resetForm() {
+    this.formData.reset();
   }
 }

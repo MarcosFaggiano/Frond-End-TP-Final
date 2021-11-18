@@ -57,6 +57,29 @@
       />
     </mat-form-field>
 
+    <!-- ---------------------------------------------------------------------------------- -->
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input
+        matInput
+        [matDatepicker]="userDateOfBirth"
+        formControlName="dateOfBirth"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="userDateOfBirth"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #userDateOfBirth></mat-datepicker>
+    </mat-form-field>
+    <!-- ------------------------------------------------------------ -->
+    <h3>SEXO</h3>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Masculino</mat-radio-button>
+      <mat-radio-button value="2">Femenino</mat-radio-button>
+    </mat-radio-group>
+
+    <!-- ------------------------------------------------------------ -->
+    <br />
     <div class="form__checkbox">
       <label for="mailingList">Suscribirse al mail List!!</label>
       <mat-checkbox
@@ -64,12 +87,17 @@
         type="checkbox"
       ></mat-checkbox>
     </div>
-    <!-- ---------------------------------------------------------------------------------- -->
-
-    <!-- ------------------------------------------------------------ -->
 
     <div class="form__buttons">
       <button mat-raised-button color="primary" type="submit">Enviar</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="resetForm()"
+      >
+        Resetear Formulario
+      </button>
     </div>
   </form>
 </mat-card>
